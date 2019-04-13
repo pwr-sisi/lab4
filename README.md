@@ -22,17 +22,25 @@ W ramach ćwiczenia zapoznasz się z nierelacyjną bazą danych MongoDB. W maszy
    ```javascript
    db.getCollection('samples_pokemon').find({name:"Pikachu"},{_id:0,name:1,weight:1})
    ```
-6. Kliknij dwukrotnie nazwę kolekcji `s*amples_pokemon` w lewym panelu aby przywrócić domyślny widok.  Kliknij prawym klawiszem dowolny dokument, z menu podręcznego wybierz *Edit document* aby zmodyfikować właściwości pokemona. Przed zapamiętaniem zmian kliknij przycisk *Validate*,
+6. Kliknij dwukrotnie nazwę kolekcji `samples_pokemon` w lewym panelu aby przywrócić domyślny widok.  Kliknij prawym klawiszem dowolny dokument, z menu podręcznego wybierz *Edit document* aby zmodyfikować właściwości pokemona. Przed zapamiętaniem zmian kliknij przycisk *Validate*,
 7. Kliknij prawym klawiszem myszy kolekcję `samples_pokemon`, z menu podręcznego wybierz *Insert document*. Wstaw nowy dokument z opisem własnego pokemona.
 
 ## Konsola
 
-Zapytania
-proste
-złożone
-warunkowe
-agregacja
-Wstawianie
+1. Uruchom terminal: menu / System Tools / LXTerminal
+2. Uruchom program `mongo`
+3. Wyświetl dostępne bazy danych, wybierz bazę danych Sample i wyświetl kolekcje w bazie danych:
+   ```
+   show dbs
+   use Sample
+   show collections
+   ```
+4. Wyświetl wszystkie dokumenty z kolekcji `samples_pokemon` oraz obejrzyj szczegółowe informacje o Pikachu:
+    ```
+    db.samples_pokemon.find()
+    db.samples_pokemon.find({name:'Pikachu'})
+    db.samples_pokemon.find({name:'Pikachu'}).pretty()
+    ```
 
 
 
