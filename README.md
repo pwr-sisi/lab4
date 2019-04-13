@@ -41,6 +41,14 @@ W ramach ćwiczenia zapoznasz się z nierelacyjną bazą danych MongoDB. W maszy
     db.samples_pokemon.find({name:'Pikachu'})
     db.samples_pokemon.find({name:'Pikachu'}).pretty()
     ```
+5. Znajdź pokemony których nazwy zaczynają się od `Ven`
+6. Znajdź pokemony które mają nazwy na litery od `A` do `C`
+7. Znajdź pokemony których słabością jest `Rock`
+8. Wyświetl tylko nazwy (zamiast całych dokumentów) pokemonów z poprzedniego zadania, następnie zmień ich kolejność na odwrotną niż alfabetyczna.
+9. Wyświetl trzecią piątkę (od 10 do 15) pokemonów.
+10. Znajdź 3 pokemony mające największą wartość `candy_count`.
+10. Dodaj do dokumentu opisującego wybranego pokemona pole `color` z dowolną wartością. W polu `img` znajdziesz adres URL obrazka przedstawiającego konkretnego pokemona.
+11. Wykorzystaj moduł agregacji, aby policzyć liczbę pokemonów o tym samym wzroście. Wskazówka: do grupowania wykorzystaj jako klucz `_id` pole `height`.
 
 
 
