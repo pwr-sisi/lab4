@@ -78,7 +78,7 @@ Vagrant.configure("2") do |config|
 	  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
 	  echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
       apt-get update
-	  apt-get install -y mongodb-org
+	  apt-get install -y mongodb-org ttf-anonymous-pro
 	  systemctl enable mongod
 	  systemctl start mongod
       cd /tmp
@@ -104,6 +104,30 @@ EOL
        wget -q -nc https://github.com/SouthbankSoftware/dbkoda-data/raw/master/SampleCollections/dump/SampleCollections/samples_pokemon.metadata.json 
        cd /vagrant/samples
        mongorestore
+       cat > /usr/share/lxterminal/lxterminal.conf << EOL
+[general]
+fontname=Anonymous Pro 14
+selchars=-A-Za-z0-9,./?%&#:_
+scrollback=1000
+EOL
+mkdir /home/vagrant/.config/lxterminal -p
+cat > /home/vagrant/.config/lxterminal/lxterminal.conf << EOL
+[general]
+fontname=Anonymous Pro 14
+selchars=-A-Za-z0-9,./?%&#:_
+scrollback=1000
+EOL
+chown -R vagrant:vagrant /home/vagrant/.config
+cat > /etc/lightdm/lightdm.conf.d/10-autologin.conf << EOL
+[Seat:*]
+autologin-guest = false
+autologin-user = vagrant
+autologin-user-timeout = 0
+
+[SeatDefaults]
+allow-guest = false
+EOL
+       reboot
 # wget https://downloads.mongodb.com/compass/mongodb-compass-community_1.17.0_amd64.deb
 # dpkg -i mongodb-compass-community_1.17.0_amd64.deb
 # git clone https://github.com/SouthbankSoftware/dbkoda-data.git
