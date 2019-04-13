@@ -1,6 +1,6 @@
 # SiSI - Lab 4
 
-# Laboratorium 3. Baza danych
+# Laboratorium 4. Baza danych
 
 Do wykonania ćwiczeń z laboratorium potrzebujesz zainstalowanych aplikacji: VirtualBox i Vagrant. Obie aplikacje istnieją w wersjach dla systemów Linux, Windows, Mac.
 
